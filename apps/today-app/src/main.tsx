@@ -1,5 +1,6 @@
 import { AppRegistry } from 'react-native';
-import { App } from './app/app';
 import 'react-native-gesture-handler';
+import './../global.css';
+import { App } from './app/app';
 
 AppRegistry.registerComponent('Today', () => App);

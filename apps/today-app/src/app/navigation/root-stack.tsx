@@ -24,7 +24,7 @@ export const RootStack = () => {
 
 const TaskListPage = () => {
   return (
-    <View>
+    <View className="bg-green-500">
       <Text>TaskListPage</Text>
     </View>
   );

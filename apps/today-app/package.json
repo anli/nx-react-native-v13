@@ -3,12 +3,23 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@nx/react": "*",
+    "@nx/webpack": "*",
     "@react-native/metro-config": "*",
+    "@react-navigation/native": "*",
+    "@react-navigation/native-stack": "*",
+    "@react-navigation/stack": "*",
     "@testing-library/jest-native": "*",
     "@testing-library/react-native": "*",
+    "metro-config": "*",
     "react": "*",
+    "react-dom": "*",
     "react-native": "*",
+    "react-native-gesture-handler": "*",
+    "react-native-safe-area-context": "*",
+    "react-native-screens": "*",
     "react-native-svg": "*",
-    "metro-config": "*"
-  }
+    "react-native-svg-transformer": "*"
+  },
+  "devDependencies": {}
 }

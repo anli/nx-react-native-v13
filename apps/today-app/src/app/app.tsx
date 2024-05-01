@@ -1,9 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
-import {
-  StatusBar as NativeStatusBar,
-  StyleSheet,
-  useColorScheme,
-} from 'react-native';
+import { StatusBar } from '@shared/ui';
+import { StyleSheet } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { RootStack } from './navigation';
 
@@ -23,16 +20,3 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-
-// TODO: refactor to @shared/ui
-const StatusBar = () => {
-  const colorScheme = useColorScheme();
-
-  return (
-    <NativeStatusBar
-      backgroundColor="transparent"
-      barStyle={colorScheme === 'dark' ? 'light-content' : 'dark-content'}
-      translucent
-    />
-  );
-};

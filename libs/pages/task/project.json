@@ -1,0 +1,9 @@
+{
+  "name": "pages-task",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/pages/task/src",
+  "projectType": "library",
+  "tags": ["type:pages"],
+  "// targets": "to see all targets run: nx show project pages-task --web",
+  "targets": {}
+}

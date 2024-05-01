@@ -22,6 +22,7 @@
     "react-native-screens": "*",
     "react-native-svg": "*",
     "react-native-svg-transformer": "*",
+    "tailwind-material-colors": "*",
     "tailwindcss": "*"
   },
   "devDependencies": {}

@@ -2187,6 +2187,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@material/material-color-utilities@npm:^0.2.7":
+  version: 0.2.7
+  resolution: "@material/material-color-utilities@npm:0.2.7"
+  checksum: 10c0/7734f8d7cffe6a92d47fcca82b4846e39ffd79be9c057f3299466696dcdee5379b8a8a3aa6a9692d40bd6900905f689105d9a8ce47882ab22348df10621f70cd
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -2362,6 +2369,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:^7.3.0"
     autoprefixer: "npm:10.4.13"
     babel-jest: "npm:^29.4.1"
+    babel-plugin-react-native-web: "npm:^0.19.11"
     eslint: "npm:~8.57.0"
     eslint-config-prettier: "npm:^9.0.0"
     eslint-plugin-import: "npm:2.27.5"
@@ -2386,6 +2394,7 @@ __metadata:
     react-native-svg-transformer: "npm:1.2.0"
     react-native-web: "npm:^0.19.9"
     react-test-renderer: "npm:18.2.0"
+    tailwind-material-colors: "npm:^3.0.0"
     tailwindcss: "npm:^3.4.3"
     ts-jest: "npm:^29.1.0"
     ts-node: "npm:10.9.1"
@@ -5180,6 +5189,13 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.4.0 || ^8.0.0-0 <8.0.0
   checksum: 10c0/bc541037cf7620bc84ddb75a1c0ce3288f90e7d2799c070a53f8a495c8c8ae0316447becb06f958dd25dcce2a2fce855d318ecfa48036a1ddb218d55aa38a744
+  languageName: node
+  linkType: hard
+
+"babel-plugin-react-native-web@npm:^0.19.11":
+  version: 0.19.11
+  resolution: "babel-plugin-react-native-web@npm:0.19.11"
+  checksum: 10c0/1f28f6e86b83e78f2ec5ed7e4ead31860a2c832f18968c21b4233db9df57a9a6cfbb1ab7b83456b174d691c5ce831263572aa557cfe8acc108beafc2b0458c1e
   languageName: node
   linkType: hard
 
@@ -14147,6 +14163,50 @@ __metadata:
   version: 3.2.4
   resolution: "symbol-tree@npm:3.2.4"
   checksum: 10c0/dfbe201ae09ac6053d163578778c53aa860a784147ecf95705de0cd23f42c851e1be7889241495e95c37cabb058edb1052f141387bef68f705afc8f9dd358509
+  languageName: node
+  linkType: hard
+
+"tailwind-material-colors@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "tailwind-material-colors@npm:3.0.0"
+  dependencies:
+    "@material/material-color-utilities": "npm:^0.2.7"
+    tailwind-material-surfaces: "npm:^3.0.2"
+    tailwind-mode-aware-colors: "npm:1.4.2"
+  peerDependencies:
+    tailwindcss: ^3.0.0
+  checksum: 10c0/e586d1dc2ca8ae9aff35e9b031b10d006edaa82fce85b526983444efc258ff1d992d00d4943569be09d81398386691e450cb817a39b4e3593fc3088d59989eb8
+  languageName: node
+  linkType: hard
+
+"tailwind-material-surfaces@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "tailwind-material-surfaces@npm:3.0.2"
+  dependencies:
+    tailwindcss-color-mix: "npm:0.0.8"
+  peerDependencies:
+    tailwindcss: ^3.0.0
+  checksum: 10c0/467f64bffc0f0bb0b9e61014119b4e17008aa04ce08c8007b2462a803d0c406d6e252d06b761990105eadf59951cd4807b8366bfa7be9dfea56b04331e9e0056
+  languageName: node
+  linkType: hard
+
+"tailwind-mode-aware-colors@npm:1.4.2":
+  version: 1.4.2
+  resolution: "tailwind-mode-aware-colors@npm:1.4.2"
+  dependencies:
+    color: "npm:^4.2.3"
+  peerDependencies:
+    tailwindcss: ^3.1.0
+  checksum: 10c0/002e122641bbd994dd0d73aa9677f86662fc12bf42b1eaf3237718bd7f35a809f71c9b6e9e6dd3bd67fefc5be0630752a7c5e78f4517b9171e8b3d92f1fcdc8a
+  languageName: node
+  linkType: hard
+
+"tailwindcss-color-mix@npm:0.0.8":
+  version: 0.0.8
+  resolution: "tailwindcss-color-mix@npm:0.0.8"
+  peerDependencies:
+    tailwindcss: ^3.0.0
+  checksum: 10c0/cf1d8f27167afb18bc984bb72be845c5df5aa95dd05b9e4aec7cebae23cee4f91bad42fe40567d5dbeac12548e1f03992532bca875fb0c2ef3736095b6feb01a
   languageName: node
   linkType: hard
 

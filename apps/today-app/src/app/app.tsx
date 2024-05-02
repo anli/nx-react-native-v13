@@ -15,6 +15,7 @@ export const App = () => {
   );
 };
 
+// TODO: refactor to shared/utils
 const styles = StyleSheet.create({
   container: {
     flex: 1,

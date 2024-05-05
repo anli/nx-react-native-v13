@@ -4,19 +4,19 @@ import {
   Checkbox as NativeCheckbox,
 } from 'react-native-paper';
 
+type CheckboxProps = Omit<CheckboxAndroidProps, 'onPress'> & {
+  onPress?: (value: CheckboxAndroidProps['status']) => void;
+};
+
 const getToggledStatus = (
   oldStatus: CheckboxAndroidProps['status']
-): CheckboxAndroidProps['status'] => {
+): CheckboxProps['status'] => {
   if (oldStatus === 'checked') return 'unchecked';
 
   return 'checked';
 };
 
-export const Checkbox = ({
-  status,
-  onPress,
-  ...rest
-}: CheckboxAndroidProps) => {
+export const Checkbox = ({ status, onPress, ...rest }: CheckboxProps) => {
   const [componentStatus, setComponentStatus] = useState(status);
 
   useEffect(() => {
@@ -24,10 +24,10 @@ export const Checkbox = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
 
-  const handlePress: CheckboxAndroidProps['onPress'] = (event) => {
+  const handlePress = () => {
     setComponentStatus((_status) => {
       const toggledStatus = getToggledStatus(_status);
-      onPress?.(event);
+      onPress?.(toggledStatus);
       return toggledStatus;
     });
   };

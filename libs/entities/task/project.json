@@ -1,0 +1,9 @@
+{
+  "name": "entities-task",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/entities/task/src",
+  "projectType": "library",
+  "tags": ["type:entities"],
+  "// targets": "to see all targets run: nx show project entities-task --web",
+  "targets": {}
+}

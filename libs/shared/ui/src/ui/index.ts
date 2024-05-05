@@ -1,5 +1,6 @@
 export * from './button';
 export * from './checkbox';
+export * from './divider';
 export * from './gesture-handler-root-view';
 export * from './list';
 export * from './safe-area-view';

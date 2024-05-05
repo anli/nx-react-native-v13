@@ -1,20 +1,21 @@
-import { formatRelative } from 'date-fns';
-
-import { Button, Checkbox, List, SafeAreaView, TopAppBar } from '@shared/ui';
+import { TaskListItem } from '@entities/task';
+import { TaskIsCompletedCheckbox } from '@features/task';
+import {
+  Button,
+  Divider,
+  List,
+  SafeAreaView,
+  TopAppBar,
+  sortByDate,
+} from '@shared/ui';
 import { SectionList, View } from 'react-native';
 import { useTaskList } from '../model';
 
 export const TaskListPage = () => {
   const { data } = useTaskList();
-
   const sections = data.tags.map((_tag) => ({
     ..._tag,
-    data: _tag.tasks.sort(
-      // TODO: refactor shared/ui/lib sortByDate
-      (a, b) =>
-        new Date(a.deadline ?? new Date()).getTime() -
-        new Date(b.deadline ?? new Date()).getTime()
-    ),
+    data: _tag.tasks.sort(sortByDate('deadline')),
   }));
 
   return (
@@ -31,28 +32,15 @@ export const TaskListPage = () => {
           keyExtractor={(item) => item.id}
           renderSectionHeader={({ section: { name } }) => (
             <View className="bg-surface">
+              <Divider />
               <List.Subheader>{name}</List.Subheader>
             </View>
           )}
-          renderItem={({ item: { name, deadline, isCompleted } }) => (
-            // TODO: entities/task
-            <List.Item
-              title={name}
-              description={
-                deadline
-                  ? `Due ${
-                      formatRelative(new Date(deadline), new Date()).split(
-                        'at'
-                      )[0]
-                    }`
-                  : 'Someday'
-              }
-              right={(props) => (
-                // TODO: refactor to features/task
-                <Checkbox
-                  status={isCompleted ? 'checked' : 'unchecked'}
-                  {...props}
-                />
+          renderItem={({ item }) => (
+            <TaskListItem
+              {...item}
+              TrailingComponent={(props) => (
+                <TaskIsCompletedCheckbox {...item} {...props} />
               )}
             />
           )}

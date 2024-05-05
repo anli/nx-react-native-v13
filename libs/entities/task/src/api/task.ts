@@ -4,3 +4,5 @@ export type Task = {
   deadline?: string;
   isCompleted?: boolean;
 };
+
+export const tasksStorageKey = 'tasksStorageKey';

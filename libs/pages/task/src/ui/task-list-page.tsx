@@ -1,20 +1,16 @@
 import { TaskListItem, useTaskList } from '@entities/task';
 import { TaskIsCompletedCheckbox } from '@features/task';
-import {
-  Button,
-  Divider,
-  List,
-  SafeAreaView,
-  TopAppBar,
-  sortByDate,
-} from '@shared/ui';
+import { sortByDate } from '@shared/lib';
+import { Button, Divider, List, SafeAreaView, TopAppBar } from '@shared/ui';
 import { SectionList, View } from 'react-native';
 
 export const TaskListPage = () => {
-  const { data } = useTaskList();
-  const sections = data.tags.map((_tag) => ({
+  const { data = { tags: [] } } = useTaskList({
+    tasksSortCompareFn: sortByDate('deadline'),
+  });
+  const sections = data?.tags?.map((_tag) => ({
     ..._tag,
-    data: _tag.tasks.sort(sortByDate('deadline')),
+    data: _tag.tasks,
   }));
 
   return (
@@ -27,7 +23,7 @@ export const TaskListPage = () => {
       />
       <SafeAreaView>
         <SectionList
-          sections={sections}
+          sections={sections ?? []}
           keyExtractor={(item) => item.id}
           renderSectionHeader={({ section: { name } }) => (
             <View className="bg-surface">

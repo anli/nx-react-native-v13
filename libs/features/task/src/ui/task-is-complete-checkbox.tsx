@@ -1,7 +1,7 @@
 import { Task } from '@entities/task';
 import { Checkbox } from '@shared/ui';
 import { ComponentProps } from 'react';
-import { useUpdateTask } from '../model';
+import { useUpdateTask } from '../api';
 
 type IsCompletedCheckboxProps = Pick<Task, 'id' | 'isCompleted'> &
   Omit<ComponentProps<typeof Checkbox>, 'status'>;
@@ -12,7 +12,7 @@ export const TaskIsCompletedCheckbox = ({
   onPress,
   ...rest
 }: IsCompletedCheckboxProps) => {
-  const { mutate: updateTask } = useUpdateTask();
+  const { mutateAsync: updateTask } = useUpdateTask();
 
   const handlePress: IsCompletedCheckboxProps['onPress'] = (status) => {
     updateTask(id, { isCompleted: status === 'checked' });

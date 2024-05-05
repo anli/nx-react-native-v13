@@ -18,6 +18,7 @@
       "@entities/task": ["libs/entities/task/src/index.ts"],
       "@features/task": ["libs/features/task/src/index.ts"],
       "@pages/task": ["libs/pages/task/src/index.ts"],
+      "@shared/lib": ["libs/shared/lib/src/index.ts"],
       "@shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },

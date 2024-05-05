@@ -1,48 +1,27 @@
-// TODO: add shared/api and connect to persistent data source
-export const useTaskList = () => ({
-  data: {
-    tags: [
-      {
-        id: 'work',
-        name: 'Work',
-        tasks: [
-          {
-            id: 'task1',
-            name: 'Lorem ipsum',
-            tags: [{ id: 'work' }],
-            deadline: '2024-05-05T00:00:00.000000+08:00',
-          },
-          {
-            id: 'task2',
-            name: 'Lorem ipsum',
-            tags: [{ id: 'work' }],
-          },
-          {
-            id: 'task3',
-            name: 'Lorem ipsum',
-            tags: [{ id: 'work' }],
-            deadline: '2024-05-03T00:00:00.000000+08:00',
-          },
-          {
-            id: 'task4',
-            name: 'Completed task',
-            tags: [{ id: 'work' }],
-            isCompleted: true,
-          },
-        ],
-      },
-      {
-        id: 'home',
-        name: 'Home',
-        tasks: [
-          {
-            id: 'task5',
-            name: 'Lorem ipsum',
-            tags: [{ id: 'home' }],
-            deadline: '2024-02-02T00:00:00.000000+08:00',
-          },
-        ],
-      },
-    ],
-  },
-});
+import { Task, useTags, useTasks, useTasksTags } from '../api';
+
+type UseTaskListProps = {
+  tasksSortCompareFn?: ((a: Task, b: Task) => number)
+}
+
+export const useTaskList = ({
+  tasksSortCompareFn
+}: UseTaskListProps) => {
+  const { data: tasks } = useTasks();
+  const { data: tags } = useTags();
+  const { data: tasksTags } = useTasksTags();
+  const data = {
+    tags: tags?.map(_tag => {
+      const filteredTasksTags = tasksTags?.filter(_taskTag => _taskTag.tagId === _tag.id)
+      const filteredTasks = (tasks ?? [])?.filter(_task => !!filteredTasksTags?.find(_taskTag => _taskTag.taskId === _task.id))
+
+      return {
+        id: _tag.id,
+        name: _tag.name,
+        tasks: (tasksSortCompareFn ? filteredTasks?.sort(tasksSortCompareFn) : filteredTasks)
+      }
+    })
+  }
+
+  return { data };
+};

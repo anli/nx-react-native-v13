@@ -1,7 +1,7 @@
 import { List } from '@shared/ui';
 import { formatRelative } from 'date-fns';
 import { ComponentProps } from 'react';
-import { Task } from '../model';
+import { Task } from '../api';
 
 type TaskListItemProps = Pick<Task, 'name' | 'deadline'> & {
   TrailingComponent: ComponentProps<typeof List.Item>['right'];

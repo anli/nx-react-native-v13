@@ -64,18 +64,21 @@
     "react-dom": "18.2.0",
     "react-native": "0.73.2",
     "react-native-gesture-handler": "^2.16.1",
+    "react-native-paper": "^5.12.3",
     "react-native-reanimated": "^3.10.0",
     "react-native-safe-area-context": "^4.10.1",
     "react-native-screens": "^3.31.1",
+    "react-native-vector-icons": "^10.0.3",
     "tailwindcss": "^3.4.3",
     "tslib": "^2.3.0"
   },
   "scripts": {
-    "start": "nx start",
-    "pod-install": "nx pod-install",
-    "affected:lint": "nx affected:lint",
-    "format:write": "nx format:write",
     "affected:build": "nx affected:build",
-    "ci": "nx affected:lint && nx format:write && nx affected:build"
+    "affected:lint": "nx affected:lint",
+    "ci": "nx affected:lint && nx format:write && nx affected:build",
+    "format:write": "nx format:write",
+    "pod-install": "nx pod-install",
+    "start": "nx start",
+    "clean": "nx clean"
   }
 }

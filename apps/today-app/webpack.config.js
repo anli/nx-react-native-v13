@@ -11,6 +11,7 @@ module.exports = {
         // Add every directory that needs to be compiled by Babel during the build.
         include: [
           path.resolve(appDirectory, 'node_modules/react-native-css-interop'),
+          path.resolve(appDirectory, 'node_modules/react-native-vector-icons'),
         ],
         use: {
           loader: 'babel-loader',

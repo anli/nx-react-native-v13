@@ -5,5 +5,18 @@
   "projectType": "application",
   "tags": ["type:app"],
   "// targets": "to see all targets run: nx show project today --web",
-  "targets": {}
+  "targets": {
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/today-app",
+        "commands": [
+          "cd android && ./gradlew clean",
+          "cd ios && pod-install",
+          "cd ios && xcodebuild clean -workspace Today.xcworkspace -scheme Today"
+        ],
+        "parallel": false
+      }
+    }
+  }
 }

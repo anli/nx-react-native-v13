@@ -1,5 +1,6 @@
 import { TopAppBar } from '@shared/ui';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import { Appbar } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const TaskListPage = () => {
@@ -7,7 +8,10 @@ export const TaskListPage = () => {
     <View className="bg-surface flex-1">
       <SafeAreaView className="flex-1">
         <TopAppBar type="center-aligned" title="Tasks" />
-        <Text className="text-on-surface">TaskListPage</Text>
+        <Appbar.Header mode="center-aligned">
+          <Appbar.Content title="Paper" />
+          <Appbar.Action icon="account-circle" />
+        </Appbar.Header>
       </SafeAreaView>
     </View>
   );

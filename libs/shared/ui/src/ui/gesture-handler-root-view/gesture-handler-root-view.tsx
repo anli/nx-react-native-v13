@@ -3,12 +3,10 @@ import { StyleSheet, ViewProps } from 'react-native';
 import { GestureHandlerRootView as NativeGestureHandlerRootView } from 'react-native-gesture-handler';
 
 export const GestureHandlerRootView: FC<PropsWithChildren<ViewProps>> = ({
-  children,
+  style,
   ...rest
 }) => (
-  <NativeGestureHandlerRootView {...rest} style={styles.container}>
-    {children}
-  </NativeGestureHandlerRootView>
+  <NativeGestureHandlerRootView style={[styles.container, style]} {...rest} />
 );
 
 const styles = StyleSheet.create({

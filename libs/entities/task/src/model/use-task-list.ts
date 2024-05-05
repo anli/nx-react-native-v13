@@ -1,5 +1,4 @@
-// TODO: entities/task api
-// TODO: entities/task model
+// TODO: add shared/api and connect to persistent data source
 export const useTaskList = () => ({
   data: {
     tags: [

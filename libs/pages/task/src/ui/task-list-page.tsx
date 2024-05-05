@@ -1,4 +1,4 @@
-import { TaskListItem } from '@entities/task';
+import { TaskListItem, useTaskList } from '@entities/task';
 import { TaskIsCompletedCheckbox } from '@features/task';
 import {
   Button,
@@ -9,7 +9,6 @@ import {
   sortByDate,
 } from '@shared/ui';
 import { SectionList, View } from 'react-native';
-import { useTaskList } from '../model';
 
 export const TaskListPage = () => {
   const { data } = useTaskList();
@@ -23,7 +22,7 @@ export const TaskListPage = () => {
       <TopAppBar
         variant="center-aligned"
         title="Tasks"
-        LeadingComponent={<TopAppBar.Action icon="account-circle" />}
+        LeadingComponent={<TopAppBar.Action icon="cog" />}
         TrailingComponent={<TopAppBar.Action icon="filter-variant" />}
       />
       <SafeAreaView>

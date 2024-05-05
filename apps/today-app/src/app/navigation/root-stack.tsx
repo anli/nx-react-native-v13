@@ -11,14 +11,12 @@ const screenOptions = {
   headerShown: false,
 };
 
-export const RootStack = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="TaskListPage"
-        component={TaskListPage}
-        options={screenOptions}
-      />
-    </Stack.Navigator>
-  );
-};
+export const RootStack = () => (
+  <Stack.Navigator>
+    <Stack.Screen
+      name="TaskListPage"
+      component={TaskListPage}
+      options={screenOptions}
+    />
+  </Stack.Navigator>
+);

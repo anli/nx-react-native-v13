@@ -45,7 +45,8 @@
               }
             ]
           }
-        ]
+        ],
+        "arrow-body-style": ["error", "as-needed"]
       }
     },
     {

@@ -75,10 +75,10 @@
   "scripts": {
     "affected:build": "nx affected:build",
     "affected:lint": "nx affected:lint",
-    "ci": "nx affected:lint && nx format:write && nx affected:build",
+    "ci": "nx affected:lint --fix && nx format:write && nx affected:build",
+    "clean": "nx affected:clean",
     "format:write": "nx format:write",
     "pod-install": "nx pod-install",
-    "start": "nx start",
-    "clean": "nx clean"
+    "start": "nx start"
   }
 }

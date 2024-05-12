@@ -28,7 +28,9 @@
     "react-native-vector-icons": "*",
     "tailwind-material-colors": "*",
     "tailwindcss": "*",
-    "date-fns": "*"
+    "date-fns": "*",
+    "uuid": "*",
+    "react-native-get-random-values": "*"
   },
   "devDependencies": {}
 }
